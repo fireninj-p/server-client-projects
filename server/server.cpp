@@ -89,20 +89,17 @@ int main(int argc, char* argv[])
     cout << "===Step 6 - Chat to the Client===" << endl;
     char buffer[200];
 
-    int byteCount = recv(acceptSocket, buffer, 200);
+    int byteCount = recv(acceptSocket, buffer, 200,0);
     
+    if (byteCount > 0)
+        cout << "Message received: " << buffer << endl;
+    else
+        WSACleanup();
     
     cout << "===Step 7 - Close Socket===" << endl;
-
-    
-    
-    
-    
-    
-    
-    
     system("pause");
     WSACleanup();
 
 
 }
+
