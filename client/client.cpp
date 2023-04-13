@@ -78,6 +78,7 @@ int main()
 	}
 	else 
 	{
+		cout << "Send failed, WSA cleanup initiating"<<endl;
 		WSACleanup();
 	}
 
